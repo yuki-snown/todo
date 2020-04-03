@@ -1,0 +1,25 @@
+
+task
+admin: string
+worker: string
+do: text
+status: bool
+create_at: timestamp
+update_at: timestamp
+
+user
+name: string
+password: string
+icon: binary
+progress: float
+create_at: timestamp
+update_at: timestamp
+
+admin
+name:string
+password: string
+icon: binary
+create_at: timestamp
+update_at: timestamp
+
+
