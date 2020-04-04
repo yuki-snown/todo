@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+	Rails.application.routes.draw do
 
   get "admin" => "admins#index"
 
@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "admin/icon" => "admins#icon"
 
   post "admin/new" => "admins#add"
+  
+  
+  
 
   get "user" => "users#index"
 
@@ -19,6 +22,9 @@ Rails.application.routes.draw do
   get "user/update" => "users#update_progress" 
 
   post "user/new" => "users#add" 
+  
+  
+  
 
   get "task" => "tasks#index"
 

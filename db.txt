@@ -1,5 +1,6 @@
 
 task
+id: integer
 admin: string
 worker: string
 do: text
@@ -8,6 +9,7 @@ create_at: timestamp
 update_at: timestamp
 
 user
+id: integer
 name: string
 password: string
 icon: binary
@@ -16,6 +18,7 @@ create_at: timestamp
 update_at: timestamp
 
 admin
+id: integer
 name:string
 password: string
 icon: binary

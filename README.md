@@ -1,24 +1,118 @@
-# README
+# To Do
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DB設計
 
-Things you may want to cover:
+ - ## db.txt 
+    データベースの設計定義書
 
-* Ruby version
+<br>
 
-* System dependencies
+## API samples
+- ## python/ *.py
+    - admin_auth.py         *admin認証
+    - admin_new.py          *admin新規作成
+    - task_add.py           *task新規作成
+    - task_update.py        *task達成状況更新
+    - user_auth.py          *user認証
+    - user_new.py           *user新規作成
 
-* Configuration
+<br>
 
-* Database creation
+## APIエンドポイント
 
-* Database initialization
+ - ## base URL
+    - https://agile-badlands-40478.herokuapp.com/
 
-* How to run the test suite
+- ## Admin
+    ### AdminUserの確認用API
+    - method: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/admin
+    - example: https://agile-badlands-40478.herokuapp.com/admin
 
-* Services (job queues, cache servers, search engines, etc.)
+    ### AdminUserAuth認証用API
+    - method: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/admin/auth
+    - params = {"name": string, "password": string}   
+    - example: https://agile-badlands-40478.herokuapp.com/admin/auth?name=hoge&password=hogehoge
 
-* Deployment instructions
+    ### AdminUserIconのURL取得用API
+    - method: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/admin/icon
+    - params = {"name": string}
+    - example: https://agile-badlands-40478.herokuapp.com/admin/icon?name=hoge
 
-* ...
+    ### AdminUserNewのユーザの新規作成用のAPI
+    - method: POST
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/admin/new
+    - params = {"name": string , "password": string , "image": request.FILES }   
+    - example: https://agile-badlands-40478.herokuapp.com/admin/new?name=hoge&passowrd=hogehoge&icon=c:\test.png
+
+<br>
+
+- ## User
+    ### Userの確認用API
+    - method: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user
+    - example: https://agile-badlands-40478.herokuapp.com/user
+
+    ### UserRankの取得用API
+    - method: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user/rank
+    - params = {"num": int }   
+    - example: https://agile-badlands-40478.herokuapp.com/user/rank?num=10
+
+    ### UserAuth認証用API
+    - mehtod: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user/auth
+    - params = {"name": string, "password": string }   
+    - example: https://agile-badlands-40478.herokuapp.com/user/auth?name=hoge&password=hogehoge
+
+    ### UserIconのURL取得用API
+    - mehtod: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user/icon
+    - params = {"name": string}
+    - example: https://agile-badlands-40478.herokuapp.com/user/icon?name=hoge
+
+    ### Userの進捗の更新用API
+    - mehtod: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user/update
+    - params = {"name": string, "progress": float}   
+    - example: https://agile-badlands-40478.herokuapp.com/user/update?name=hoge&preogress=10.0
+
+    ### Userの新規作成用のAPI
+    - mehtod: POST
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/user/new
+    - params = {"name": string, "password": string, "image": request.FILES } 
+    - example: https://agile-badlands-40478.herokuapp.com/user/new?name=hoge&passowrd=hogehoge&icon=c:\test.png
+
+<br>
+
+- ## Task
+    ### Taskの確認用API
+    - mehtod: GET    
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/task
+    - example: https://agile-badlands-40478.herokuapp.com/task
+
+    ### Taskの未消化の取得用のAPI
+    - mehtod: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/task/yet
+    - params = {"worker": string}   
+    - example: https://agile-badlands-40478.herokuapp.com/task/yet?worker=hoge
+    
+    ### Taskの進捗の取得用のAPI
+    - mehtod: GET
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/task/progress
+    - params = {"worker"; string}   
+    - example: https://agile-badlands-40478.herokuapp.com/task/progress
+    
+    ### Taskの新規作成用のAPI
+    - mehtod: POST
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/task/add
+    - params = {"admin": string, "worker": string, "do": string}   
+    - example: https://agile-badlands-40478.herokuapp.com/task/add?admin=hoge&worker=hoge&do=hogehogehoge
+    
+    ### Taskの更新用のAPI
+    - mehtod: POST
+    - endpointURL: https://agile-badlands-40478.herokuapp.com/task/update
+    - params = {"id": int, "status": bool}   *bool = "true" or "false"
+    - example: https://agile-badlands-40478.herokuapp.com/task/update?id=1&status=true
