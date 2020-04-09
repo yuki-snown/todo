@@ -1,7 +1,7 @@
 import requests
 import os
 
-url_items = "https://agile-badlands-40478.herokuapp.com/task/add"
+url_items = "https://calm-coast-93883.herokuapp.com/task/add"
 
 datas = [
     {"worker": "gopher", "admin": "pythonista", "do": "ねむ"},

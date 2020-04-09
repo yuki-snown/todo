@@ -1,7 +1,7 @@
 import requests
 import os
 
-url_items = "https://agile-badlands-40478.herokuapp.com/user/new"
+url_items = "https://calm-coast-93883.herokuapp.com/user/new"
 
 datas = [
     {"name": "gopher", "password": "go"},
