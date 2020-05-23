@@ -13,8 +13,10 @@ module Todo
 
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Credentials' => 'true',
-      'Access-Control-Allow-Origin' => 'https://quirky-babbage-2e4bf0.netlify.com' ,
-      'Access-Control-Request-Method' => '*'
+      'Access-Control-Allow-Origin' => '*' ,
+      'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS' ,
+      'Access-Control-Request-Method' => '*',
+      'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     }
 
     # Settings in config/environments/* take precedence over those specified here.
